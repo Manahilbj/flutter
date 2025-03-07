@@ -1,0 +1,19 @@
+import 'dart:async';
+
+Future<String> fetchWeatherData() async {
+  await Future.delayed(Duration(seconds: 3)); 
+    return "Weather: Sunny, 25°C";
+}
+
+void main() async {
+  print("Fetching weather data...");
+
+  try {
+    String weather = await fetchWeatherData();
+    print("Weather data received: $weather");
+  } catch (e) {
+    print("Error: $e");
+  }
+
+  print("Program finished.");
+}
